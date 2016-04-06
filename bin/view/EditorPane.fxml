@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import model.Terrain?>
+
+<AnchorPane maxWidth="-Infinity" prefHeight="285.0" prefWidth="178.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EditorPaneController">
+	<children>
+		<VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="265.0" prefWidth="184.0" spacing="30.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="20.0">
+			<children>
+				<HBox alignment="CENTER_LEFT" spacing="10.0">
+					<children>
+						<Label prefHeight="17.0" prefWidth="47.0" text="Terrain:" />
+						<ChoiceBox fx:id="terrainBox" disable="false" prefHeight="25.0" prefWidth="99.0" value="River">
+							<items>
+								<FXCollections fx:factory="observableArrayList">
+									<String fx:value="River" />
+									<String fx:value="Forest" />
+								</FXCollections>
+							</items>
+						</ChoiceBox>
+					</children>
+				</HBox>
+				<HBox alignment="CENTER_LEFT" spacing="10.0">
+					<children>
+						<Label alignment="TOP_LEFT" prefHeight="17.0" prefWidth="45.0" text="Size:" />
+						<ChoiceBox fx:id="sizeBox" prefHeight="27.0" prefWidth="103.0" value="Small">
+							<items>
+								<FXCollections fx:factory="observableArrayList">
+									<String fx:value="Small" />
+									<String fx:value="Medium" />
+									<String fx:value="Large" />
+								</FXCollections>
+							</items>
+						</ChoiceBox>
+					</children>
+				</HBox>
+				<HBox alignment="CENTER_LEFT" prefHeight="27.0" prefWidth="156.0" spacing="20.0">
+					<children>
+						<Label prefHeight="17.0" prefWidth="36.0" text="Color:" />
+						<ColorPicker fx:id="colorBox" disable="true" prefHeight="27.0" prefWidth="103.0" />
+					</children>
+				</HBox>
+            <HBox alignment="CENTER_RIGHT">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="194.0" text="Animation" />
+                  <CheckBox fx:id="animationCheckBox" alignment="CENTER_RIGHT" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="17.0" prefWidth="41.0" selected="true" text="text" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" />
+               </children>
+            </HBox>
+			</children>
+			<opaqueInsets>
+				<Insets />
+			</opaqueInsets>
+		</VBox>
+		<Button fx:id="readyButton" layoutX="-26.0" layoutY="-12.0" onAction="#readyToGo" mnemonicParsing="false" text="Ready!" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="25.0" />
+		<Button fx:id="clearButton" mnemonicParsing="false" onAction="#clearMap" text="Clear" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="95.0" />
+	</children>
+</AnchorPane>
